@@ -1,0 +1,14 @@
+{
+  "name": "karen-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Naillik1/karen-project.git",
+  "author": "Killian McGuinness <killianmc2@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
