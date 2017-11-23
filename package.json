@@ -6,7 +6,7 @@
   "author": "Killian McGuinness <killianmc2@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
