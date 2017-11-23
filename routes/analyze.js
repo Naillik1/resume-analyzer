@@ -10,9 +10,10 @@ const nlu = new NaturalLanguageUnderstandingV1({
 
 router.route('/analyze')
 
-.get((req, res) => {
+.post((req, res) => {
+  const data = req.body.data;
   const request = {
-    "text": "IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries.",
+    "text": data,
     "features": {
       "entities": {
         "emotion": true,
