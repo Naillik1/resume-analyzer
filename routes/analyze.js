@@ -16,14 +16,10 @@ router.route('/analyze')
     "text": data,
     "features": {
       "entities": {
-        "emotion": true,
-        "sentiment": true,
-        "limit": 2
+        "limit": 10
       },
       "keywords": {
-        "emotion": true,
-        "sentiment": true,
-        "limit": 2
+        "limit": 10
       }
     }
   }
