@@ -12,6 +12,9 @@ router.route('/analyze')
 
 .post((req, res) => {
   const data = req.body.data;
+  console.log(req);
+  console.log(req.body);
+  console.log(data);
   const request = {
     "text": data,
     "features": {
