@@ -6,8 +6,8 @@ import Card from 'material-ui/Card';
 class Form extends Component {
   render() {
     return (
-        <Card>
-          <form action="/" name="submit">
+        <Card style={{width: '1000px', margin: "0 auto"}}>
+          <form action="/" name="toAnalyze">
             <TextField
               name="resume"
               floatingLabelText="Resume and Cover Letter"
@@ -15,14 +15,12 @@ class Form extends Component {
               rows={10}
               rowsMax={20}
               fullWidth={true}
-              inputStyle={{ textAlign: 'center' }}
-              hintStyle={{ width: '600px', textAlign: 'center' }}
-              style={{ width: '800px' }}
+              style={{ textAlign: 'left', width: '90%' }}
             />
             <div>
-            <RaisedButton label="Analyze" />
-          </div>
-            </form>
+              <RaisedButton label="Analyze" onClick={this.props.onSubmit} />
+            </div>
+          </form>
         </Card>
         );
   }

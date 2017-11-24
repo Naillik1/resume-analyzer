@@ -12,9 +12,6 @@ router.route('/analyze')
 
 .post((req, res) => {
   const data = req.body.data;
-  console.log(req);
-  console.log(req.body);
-  console.log(data);
   const request = {
     "text": data,
     "features": {
@@ -30,10 +27,12 @@ router.route('/analyze')
       }
     }
   }
+  console.log(data);
   nlu.analyze(request, (err, response) => {
     if (err) {
       console.log(`error: ${err}`);
     } else {
+      console.log(JSON.stringify(response, null, 2));
       res.json(response);
     }
   });
