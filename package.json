@@ -6,7 +6,8 @@
   "author": "Killian McGuinness <killianmc2@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
