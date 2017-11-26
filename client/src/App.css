@@ -27,16 +27,3 @@
   to { transform: rotate(360deg); }
 }
 
-.bar {
-  fill: #6F257F;
-}
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #D4D8DA;
-  stroke-width: 1px;
-  shape-rendering: crispEdges;
-}
-.x path {
-  display: none;
-}

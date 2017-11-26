@@ -27,14 +27,10 @@ class App extends Component {
   }
 
   render() {
-    const keywords = this.state.watson.keywords;
-    const rendered = keywords ? keywords.map( (keyword, i) => {
-      return (
-          <div>
-            {keyword.text}, {keyword.relevance}
-          </div>
-          );
-    }) : null;
+    console.log(this.state.watson);
+    const barChart = this.state.watson.keywords ? (
+        <Chart keywords={this.state.watson.keywords} /> 
+        ) : null;
     return (
         <MuiThemeProvider>
           <div className='App'>
@@ -43,7 +39,7 @@ class App extends Component {
               <h1 className='App-title'>Resume Analyzer</h1>
             </header>
             <Form onSubmit={this.analyzeText} />
-            { keywords ? (<Chart keywords={keywords} />) : null}
+            { barChart }
           </div>
         </MuiThemeProvider>
         );
