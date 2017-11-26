@@ -13,12 +13,16 @@ class Form extends Component {
               floatingLabelText="Resume and Cover Letter"
               multiLine={true}
               rows={10}
-              rowsMax={20}
+              rowsMax={10}
               fullWidth={true}
               style={{ textAlign: 'left', width: '90%' }}
             />
             <div>
-              <RaisedButton label="Analyze" onClick={this.props.onSubmit} />
+              <RaisedButton 
+                label="Analyze" 
+                fullWidth={true}
+                primary={true}
+                onClick={this.props.onSubmit} />
             </div>
           </form>
         </Card>
