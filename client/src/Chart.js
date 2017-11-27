@@ -128,7 +128,7 @@ class Chart extends Component {
 
     svg.selectAll('.bar').selectAll('.label').remove();
     
-    svg.selectAll('.bar')
+    bar.enter()
       .append('text')
       .attr('class', 'label')
       .attr('x', (d) => (x(d.relevance) - 100))
