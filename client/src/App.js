@@ -26,8 +26,15 @@ class App extends Component {
 
   render() {
     console.log(this.state.watson);
-    const barChart = this.state.watson.keywords ? (
-        <Chart data={this.state.watson.keywords} /> 
+    let keywords = (this.state.watson.keywords)
+    if (keywords){
+      keywords = keywords.map( (elem) => {
+      elem['key'] = `${elem.text}${elem.relevance}`
+      return elem;
+      });
+    }
+    const barChart = keywords ? (
+        <Chart data={keywords} /> 
         ) : null;
     return (
         <MuiThemeProvider>

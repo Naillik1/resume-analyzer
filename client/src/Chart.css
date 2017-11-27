@@ -1,5 +1,4 @@
 .barChart {
-  text-align: left;
 }
 
 .bar {
@@ -17,8 +16,5 @@
   stroke: #D4D8DA;
   stroke-width: 1px;
   shape-rendering: crispEdges;
-}
-.x path {
-  display: none;
 }
 
