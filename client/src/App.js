@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import * as d3 from 'd3';
-import {withFauxDOM} from 'react-faux-dom';
 import Form from './Form.js';
 import logo from './logo.svg';
 import './App.css';
@@ -29,7 +27,7 @@ class App extends Component {
   render() {
     console.log(this.state.watson);
     const barChart = this.state.watson.keywords ? (
-        <Chart keywords={this.state.watson.keywords} /> 
+        <Chart data={this.state.watson.keywords} /> 
         ) : null;
     return (
         <MuiThemeProvider>
