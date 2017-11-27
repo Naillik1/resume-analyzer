@@ -1,8 +1,12 @@
 .barChart {
+  margin: 20;  
 }
 
 .bar {
-  fill: #6F257F;
+  fill: #2979FF;
+}
+.bar:hover{
+  fill: #FF9100;
 }
 
 .label {
