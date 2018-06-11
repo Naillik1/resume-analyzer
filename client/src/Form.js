@@ -10,8 +10,8 @@ class Form extends Component {
         <Card className="formContainer">
           <form action="/" name="toAnalyze">
             <TextField
-              name="resume"
-              floatingLabelText="Resume and Cover Letter"
+              name="text"
+              floatingLabelText="Text"
               multiLine={true}
               rows={10}
               rowsMax={15}

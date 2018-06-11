@@ -6,13 +6,13 @@ import './App.css';
 
 class App extends Component {
   state = { 
-    watsonData: [],
+    analysis: [],
     errors: {}
   };
 
   analyzeText = (event) => {
     event.preventDefault();
-    const payload = { data: document.forms.toAnalyze.resume.value };
+    const payload = { data: document.forms.toAnalyze.text.value };
     fetch('/api/analyze', {
       method: 'POST',
       headers: {
@@ -25,7 +25,7 @@ class App extends Component {
         if (res.errors) {
           this.setState({ errors: res.errors })
         } else {
-          this.setState({ watsonData: res, errors: {} });
+          this.setState({ analysis: res, errors: {} });
         }
     });
   }
@@ -34,8 +34,11 @@ class App extends Component {
     const margin = { top: 30, right: 20, bottom: 30, left: 150 };
     const width = 960 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
-     
-    let keywords = (this.state.watsonData.keywords)
+    
+    let summary = this.state.analysis.summary;
+    let keywords = this.state.analysis.keywords;
+    console.log(summary);
+    console.log(keywords);
     if (keywords) {
       keywords = keywords.map( (elem) => {
       elem['key'] = `${elem.text}${elem.relevance}`
@@ -50,9 +53,12 @@ class App extends Component {
           <div className='App'>
             <header className='App-header'>
               <h1 className='App-title'>Resume Analyzer</h1>
-              <h3> Enter your resume + cover letter to see what Watson thinks the most relevant keywords are! </h3>
+              <h3> Enter a block of text to get a summary and chart of its most important keywords :) </h3>
             </header>
             <Form onSubmit={this.analyzeText} errors={this.state.errors} />
+            <br />
+            <div className='formContainer'>Summary</div>
+            <div className='formContainer'>{ summary }</div>
             { barChart }
           </div>
         </MuiThemeProvider>

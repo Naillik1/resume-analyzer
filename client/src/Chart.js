@@ -91,7 +91,7 @@ class Chart extends Component {
        .attr('x', (d) => (x(d.relevance) - 100))
        .attr('y', (d) => y(d.text) + (y.bandwidth()/2))
        .attr("dy","0.35em")
-       .text( (d) => d.relevance);
+       .text( (d) => d.relevance.toFixed(4));
     
     this.props.animateFauxDOM(800);
   }

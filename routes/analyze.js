@@ -1,12 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js');
-
-const nlu = new NaturalLanguageUnderstandingV1({
-  username: process.env.BLUEMIX_NAME,
-  password: process.env.BLUEMIX_PASS,
-  version_date: NaturalLanguageUnderstandingV1.VERSION_DATE_2017_02_27
-});
+const python = require('python-shell');
 
 const MAX_LENGTH = 3000;
 
@@ -37,24 +31,13 @@ router.route('/analyze')
       errors: validationResult.errors
     });
   }
-  const request = {
-    "text": data,
-    "features": {
-      "entities": {
-        "limit": 10
-      },
-      "keywords": {
-        "limit": 10,
-        "sentiment": true
-      }
-    }
+  let options = {
+    args: [data]
   }
-  nlu.analyze(request, (err, response) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(response);
-    }
+  
+  python.run('summarize.py', options=options, (err, results) => { 
+    if (err) console.log(err);
+    res.send(JSON.stringify(JSON.parse(results[0])));
   });
 });
 
