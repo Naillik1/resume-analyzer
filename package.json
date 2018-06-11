@@ -1,8 +1,8 @@
 {
-  "name": "karen-project",
+  "name": "text-analyzer",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Naillik1/karen-project.git",
+  "repository": "https://github.com/Naillik1/text-analyzer.git",
   "author": "Killian McGuinness <killianmc2@gmail.com>",
   "license": "MIT",
   "scripts": {
