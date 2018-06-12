@@ -31,7 +31,9 @@ class Chart extends Component {
     const height = this.props.height;
     
     // Create scales
-    const x = d3.scaleLinear().range([0, width]).domain([0, 1]);
+    const maxRelevance = data[data.length-1].relevance
+    const xDomainMax = Math.max( Math.ceil(maxRelevance * 10) / 10, 0.3 ).toFixed(2);
+    const x = d3.scaleLinear().range([0, width]).domain([0, xDomainMax]);
     const y = d3.scaleBand().rangeRound([height, 0]).domain(data.map( (d) => d.text)).padding(0.1);
 
     let svg = d3.select(faux).append('svg')
@@ -104,7 +106,9 @@ class Chart extends Component {
     const height = this.props.height;
     
     // Create scales
-    const x = d3.scaleLinear().range([0, width]).domain([0, 1]);
+    const maxRelevance = data[data.length-1].relevance
+    const xDomainMax = Math.max( Math.ceil(maxRelevance * 10) / 10, 0.3 ).toFixed(2);
+    const x = d3.scaleLinear().range([0, width]).domain([0, xDomainMax]);
     const y = d3.scaleBand().rangeRound([height, 0]).domain(data.map( (d) => d.text)).padding(0.1);
 
     const svg = d3.select(faux).select('svg').select('g');
