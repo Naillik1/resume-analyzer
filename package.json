@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha",
+    "test": "mocha --exit",
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },
   "dependencies": {

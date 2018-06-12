@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Card from 'material-ui/Card';
-import './Form.css';
+import './styles/Form.css';
 
 class Form extends Component {
   render() {
     return (
-        <Card className="formContainer">
+        <Card className="center">
           <form action="/" name="toAnalyze">
             <TextField
               name="text"

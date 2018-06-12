@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Form from './Form.js';
 import Chart from './Chart.js';
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
   state = { 
@@ -36,9 +36,15 @@ class App extends Component {
     const height = 400 - margin.top - margin.bottom;
     
     let summary = this.state.analysis.summary;
+    const summaryDiv = summary ? (
+      <div className='center'>
+        <div> Summary</div>
+        <div>{ summary }</div>
+      </div>
+    ) : null;
+
     let keywords = this.state.analysis.keywords;
-    console.log(summary);
-    console.log(keywords);
+
     if (keywords) {
       keywords = keywords.map( (elem) => {
       elem['key'] = `${elem.text}${elem.relevance}`
@@ -48,6 +54,7 @@ class App extends Component {
     const barChart = keywords ? (
         <Chart data={keywords} margin={margin} width={width} height={height}/> 
         ) : null;
+    
     return (
         <MuiThemeProvider>
           <div className='App'>
@@ -57,8 +64,7 @@ class App extends Component {
             </header>
             <Form onSubmit={this.analyzeText} errors={this.state.errors} />
             <br />
-            <div className='formContainer'>Summary</div>
-            <div className='formContainer'>{ summary }</div>
+            { summaryDiv }
             { barChart }
           </div>
         </MuiThemeProvider>

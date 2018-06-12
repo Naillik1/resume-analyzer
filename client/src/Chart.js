@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import {withFauxDOM} from 'react-faux-dom';
-import './Chart.css';
+import './styles/Chart.css';
 
 class Chart extends Component {
   render() {
