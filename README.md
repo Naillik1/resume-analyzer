@@ -1,5 +1,5 @@
-# resume-analyzer
-Demo project for Karen.ai: Web-app that permits a user to submit their cover-letter and resume and generates a report on the output returned from the IBM Watson Natural Language Understanding Service.
+# text-analyzer
+Web-app that lets a user submit a block of text, generating a summary and report on keywords found in the text
 
 See a live version @ https://glacial-fortress-69484.herokuapp.com/
 
